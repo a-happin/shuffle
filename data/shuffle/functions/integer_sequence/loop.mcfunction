@@ -24,6 +24,6 @@ function shuffle:_impl/lmt/swap/
 ## lmt[index] ??= swap_j + begin
 execute unless data storage : _[-1].lmt.data[-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2]._ store result storage : _[-1].lmt.data[-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2]._ int 1 run scoreboard players operation $swap_j _shuffle += $begin _shuffle
 
-## if (--take >= 2) self ()
+## do-while (--take >= 1 && size >= 2)
 scoreboard players remove $take _shuffle 1
-execute if score $take _shuffle matches 2.. run function shuffle:integer_sequence/loop
+execute if score $take _shuffle matches 1.. if score $size _shuffle matches 2.. run function shuffle:integer_sequence/loop

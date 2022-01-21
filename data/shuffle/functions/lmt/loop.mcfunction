@@ -18,6 +18,6 @@ execute store result score $swap_j _shuffle run scoreboard players remove $size 
 ## lmt.swap (swap_i, swap_j)
 function shuffle:_impl/lmt/swap/
 
-## if (--take >= 2) self ()
+## do-while (--take >= 1 && size >= 2)
 scoreboard players remove $take _shuffle 1
-execute if score $take _shuffle matches 2.. run function shuffle:lmt/loop
+execute if score $take _shuffle matches 1.. if score $size _shuffle matches 2.. run function shuffle:lmt/loop
