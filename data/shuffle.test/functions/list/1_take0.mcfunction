@@ -4,7 +4,7 @@
 data modify storage : _ append value {}
   data modify storage : _[-1].list set value [77b]
   data modify storage : _[-1].take set value 0
-  tellraw @s [{"text": "Debug» ", "color": "green"}, "list = ", {"storage": ":", "nbt": "_[-1].list"}]
+  tellraw @s [{"text": "Debug» ", "color": "green"}, "args = ", {"storage": ":", "nbt": "_[-1]"}]
   function shuffle:list/
   data modify storage : _[-1].expected set value []
   execute store result storage : _[-1].test.failure byte 1 run data modify storage : _[-1].expected set from storage : _[-1].shuffled

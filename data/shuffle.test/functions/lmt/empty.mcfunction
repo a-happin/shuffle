@@ -3,7 +3,7 @@
 
 data modify storage : _ append value {}
   data modify storage : _[-1].lmt set value {data: [], size: 0}
-  tellraw @s [{"text": "Debug» ", "color": "green"}, "lmt = ", {"storage": ":", "nbt": "_[-1].lmt"}]
+  tellraw @s [{"text": "Debug» ", "color": "green"}, "args = ", {"storage": ":", "nbt": "_[-1]"}]
   function shuffle:lmt/
   data modify storage : _[-1].expected set value []
   execute store result storage : _[-1].test.failure byte 1 run data modify storage : _[-1].expected set from storage : _[-1].shuffled
