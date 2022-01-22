@@ -34,6 +34,10 @@
 #declare score_holder $
 
 #>
+#@within function shuffle:_impl/random/**
+  #declare score_holder $carry
+
+#>
 #@within function shuffle:integer_sequence/**
   #declare score_holder $begin
   #declare score_holder $end
