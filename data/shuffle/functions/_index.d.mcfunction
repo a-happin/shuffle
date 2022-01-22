@@ -16,6 +16,7 @@
 #>
 #@within function shuffle:**
   #declare score_holder #2^16
+  #declare score_holder #2^17
   #declare score_holder $size
   #declare score_holder $take
   #declare score_holder $index

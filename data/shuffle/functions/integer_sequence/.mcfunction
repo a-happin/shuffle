@@ -14,6 +14,7 @@
 #@within function shuffle:integer_sequence/**
 scoreboard objectives add _shuffle dummy
   scoreboard players set #2^16 _shuffle 65536
+  scoreboard players set #2^17 _shuffle 131072
   data modify storage : _[-1].shuffled set value []
   execute store result score $begin _shuffle run data get storage : _[-1].begin
   execute store result score $size _shuffle store result score $end _shuffle run data get storage : _[-1].end

@@ -5,8 +5,8 @@
 
 function shuffle:_impl/random/
 
-## swap_i = index = random %= size
-execute store result score $swap_i _shuffle store result score $index _shuffle run scoreboard players operation $random _shuffle %= $size _shuffle
+## index = random %= size
+execute store result score $index _shuffle run scoreboard players operation $random _shuffle %= $size _shuffle
 
 ## shuffled.append (lmt[index])
 execute unless score $index _shuffle = $prev_index _shuffle run function shuffle:_impl/lmt/unsafe_at/impl
