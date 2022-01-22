@@ -3,15 +3,14 @@
 
 function shuffle:_impl/random/
 
-## index = random %= size
-execute store result score $index _shuffle run scoreboard players operation $random _shuffle %= $size _shuffle
+## random %= size
+scoreboard players operation $random _shuffle %= $size _shuffle
 
-execute if score $index _shuffle matches 1.. run function shuffle:list/legacy/move
+execute if score $random _shuffle < $index _shuffle run function shuffle:list/legacy/shift_left
+execute if score $random _shuffle > $index _shuffle run function shuffle:list/legacy/shift_right
 
-data modify storage : _[-2].shuffled append from storage : _[-2].list[-1]
-data remove storage : _[-2].list[-1]
-data modify storage : _[-2].list append from storage : _[-1].cache[]
-data remove storage : _[-1].cache
+data modify storage : _[-2].shuffled append from storage : _[-1].cache[-1]
+data remove storage : _[-1].cache[-1]
 
 scoreboard players remove $size _shuffle 1
 scoreboard players remove $take _shuffle 1
