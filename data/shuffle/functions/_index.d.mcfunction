@@ -19,19 +19,22 @@
   #declare score_holder $size
   #declare score_holder $take
   #declare score_holder $index
+  #declare score_holder $prev_index
   #declare score_holder $swap_i
   #declare score_holder $swap_j
   #declare score_holder $random
 
 #>
 #@within function shuffle:_impl/lmt/at/**
-#declare score_holder $prev_index
 
 #>
-#@within function shuffle:_impl/lmt/at/impl
+#@within
+#  function shuffle:_impl/lmt/at/impl
+#  function shuffle:_impl/lmt/unsafe_at/impl
 #declare score_holder $
 
 #>
 #@within function shuffle:integer_sequence/**
   #declare score_holder $begin
   #declare score_holder $end
+  #declare score_holder $last
