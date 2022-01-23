@@ -1,5 +1,5 @@
 #> shuffle:_impl/random/seed
-#@within function shuffle:_impl/random/
+#@within function shuffle:_impl/load
 
 #>
 #@private
