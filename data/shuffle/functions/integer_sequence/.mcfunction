@@ -15,14 +15,15 @@
 scoreboard objectives add _shuffle dummy
   scoreboard players set #2^16 _shuffle 65536
   scoreboard players set #2^17 _shuffle 131072
+  execute store result score $random.carry _shuffle run data get storage shuffle: random[3]
   data modify storage : _[-1].shuffled set value []
   execute store result score $begin _shuffle run data get storage : _[-1].begin
   execute store result score $size _shuffle store result score $end _shuffle run data get storage : _[-1].end
   execute store result score $take _shuffle run scoreboard players operation $size _shuffle -= $begin _shuffle
   execute if data storage : _[-1].take store result score $take _shuffle run data get storage : _[-1].take
   scoreboard players operation $take _shuffle < $size _shuffle
-  data modify storage : _ append value {lmt: {data: []}}
-    execute if score $take _shuffle matches 1.. if score $size _shuffle matches 2.. run function shuffle:integer_sequence/loop
+  data modify storage : _ append value {lmt: []}
+    execute if score $take _shuffle matches 1.. if score $size _shuffle matches 2.. run function #shuffle:integer_sequence/loop
     execute if score $take _shuffle matches 1 if score $size _shuffle matches 1 run function shuffle:integer_sequence/last
   data remove storage : _[-1]
 scoreboard objectives remove _shuffle

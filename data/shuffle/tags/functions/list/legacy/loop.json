@@ -1,0 +1,6 @@
+{
+  "values": [
+    "shuffle:_impl/random/",
+    "shuffle:list/legacy/loop"
+  ]
+}

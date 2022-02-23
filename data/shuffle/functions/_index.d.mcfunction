@@ -9,34 +9,18 @@
 #@public
   #declare storage :
 
-#> objective _shuffleが存在する前提でよい
-#@within function shuffle:_impl/**
-#declare objective _shuffle
-
 #>
 #@within function shuffle:**
-  #declare score_holder #2^16
-  #declare score_holder #2^17
+  #declare objective _shuffle
   #declare score_holder $size
   #declare score_holder $take
   #declare score_holder $index
   #declare score_holder $prev_index
-  #declare score_holder $swap_i
-  #declare score_holder $swap_j
+  #declare score_holder $
   #declare score_holder $random
-
-#>
-#@within function shuffle:_impl/lmt/at/**
-
-#>
-#@within
-#  function shuffle:_impl/lmt/at/impl
-#  function shuffle:_impl/lmt/unsafe_at/impl
-#declare score_holder $
-
-#>
-#@within function shuffle:_impl/random/**
-  #declare score_holder $carry
+  #declare score_holder $random.carry
+  #declare score_holder #2^16
+  #declare score_holder #2^17
 
 #>
 #@within function shuffle:integer_sequence/**
