@@ -1,5 +1,5 @@
 #> shuffle:_impl/lmt/construct/from_list/
-#@public
+#@within function shuffle:**
 #@input
 #  objective _shuffle
 #  storage : _[-2].list List (0 <= list.size < 65536)
