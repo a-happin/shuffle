@@ -1,9 +1,5 @@
 #> shuffle:lmt/loop
-#@within
-#  function shuffle:lmt/
-#  function shuffle:lmt/loop
-
-function shuffle:_impl/random/
+#@within tag/function shuffle:lmt/loop
 
 ## index = random %= size
 execute store result score $index _shuffle run scoreboard players operation $random _shuffle %= $size _shuffle
@@ -22,4 +18,4 @@ execute unless score $index _shuffle = $size _shuffle run function #shuffle:lmt/
 scoreboard players remove $take _shuffle 1
 
 ## do-while (take >= 1 && size >= 2)
-execute if score $take _shuffle matches 1.. if score $size _shuffle matches 2.. run function shuffle:lmt/loop
+execute if score $take _shuffle matches 1.. if score $size _shuffle matches 2.. run function #shuffle:lmt/loop

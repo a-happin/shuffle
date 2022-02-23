@@ -1,9 +1,5 @@
 #> shuffle:integer_sequence/loop
-#@within
-#  function shuffle:integer_sequence/
-#  function shuffle:integer_sequence/loop
-
-function shuffle:_impl/random/
+#@within tag/function shuffle:integer_sequence/loop
 
 ## index = random %= size
 execute store result score $index _shuffle run scoreboard players operation $random _shuffle %= $size _shuffle
@@ -25,4 +21,4 @@ execute unless score $index _shuffle = $size _shuffle run function #shuffle:inte
 scoreboard players remove $take _shuffle 1
 
 ## do-while (take >= 1 && size >= 2)
-execute if score $take _shuffle matches 1.. if score $size _shuffle matches 2.. run function shuffle:integer_sequence/loop
+execute if score $take _shuffle matches 1.. if score $size _shuffle matches 2.. run function #shuffle:integer_sequence/loop

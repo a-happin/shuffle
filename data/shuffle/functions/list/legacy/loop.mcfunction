@@ -1,7 +1,5 @@
 #> shuffle:list/legacy/loop
-#@within function shuffle:list/legacy/*
-
-function shuffle:_impl/random/
+#@within tag/function shuffle:list/legacy/loop
 
 ## random %= size
 scoreboard players operation $random _shuffle %= $size _shuffle
@@ -15,4 +13,4 @@ data remove storage : _[-1].cache[-1]
 scoreboard players remove $size _shuffle 1
 scoreboard players remove $take _shuffle 1
 
-execute if score $take _shuffle matches 1.. if score $size _shuffle matches 2.. run function shuffle:list/legacy/loop
+execute if score $take _shuffle matches 1.. if score $size _shuffle matches 2.. run function #shuffle:list/legacy/loop

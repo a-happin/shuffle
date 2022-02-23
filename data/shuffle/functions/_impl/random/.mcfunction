@@ -1,5 +1,5 @@
 #> shuffle:_impl/random/
-#@within function shuffle:**
+#@within * shuffle:**
 #@output score $random _shuffle
 
 # requires:

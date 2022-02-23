@@ -22,7 +22,7 @@ scoreboard objectives add _shuffle dummy
   execute if data storage : _[-1].take store result score $take _shuffle run data get storage : _[-1].take
   scoreboard players operation $take _shuffle < $size _shuffle
   data modify storage : _ append value {lmt: []}
-    execute if score $take _shuffle matches 1.. if score $size _shuffle matches 2.. run function shuffle:integer_sequence/loop
+    execute if score $take _shuffle matches 1.. if score $size _shuffle matches 2.. run function #shuffle:integer_sequence/loop
     execute if score $take _shuffle matches 1 if score $size _shuffle matches 1 run function shuffle:integer_sequence/last
   data remove storage : _[-1]
 scoreboard objectives remove _shuffle
