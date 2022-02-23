@@ -10,6 +10,7 @@
 
 scoreboard players set #2^16 _shuffle 65536
 scoreboard players set #2^17 _shuffle 131072
+execute store result score $carry _shuffle run data get storage shuffle: random[3]
 data modify storage : _[-1].shuffled set value []
 scoreboard players operation $take _shuffle = $size _shuffle
 execute if data storage : _[-1].take store result score $take _shuffle run data get storage : _[-1].take

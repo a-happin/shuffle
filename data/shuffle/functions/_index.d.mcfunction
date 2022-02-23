@@ -25,6 +25,7 @@
   #declare score_holder $swap_j
   #declare score_holder $swap_with
   #declare score_holder $random
+  #declare score_holder $carry
 
 #>
 #@within function shuffle:_impl/lmt/at/**
@@ -34,10 +35,6 @@
 #  function shuffle:_impl/lmt/at/**
 #  function shuffle:_impl/lmt/unsafe_at/**
 #declare score_holder $
-
-#>
-#@within function shuffle:_impl/random/**
-  #declare score_holder $carry
 
 #>
 #@within function shuffle:integer_sequence/**
