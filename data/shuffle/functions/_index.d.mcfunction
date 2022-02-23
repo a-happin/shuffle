@@ -25,7 +25,7 @@
   #declare score_holder $swap_j
   #declare score_holder $swap_with
   #declare score_holder $random
-  #declare score_holder $carry
+  #declare score_holder $random.carry
 
 #>
 #@within function shuffle:_impl/lmt/at/**
