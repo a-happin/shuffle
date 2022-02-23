@@ -1,6 +1,5 @@
 #> shuffle:_impl/lmt/construct/_impl/calc_index_as_bits
 #@within tag/function shuffle:_impl/lmt/construct/from_list/0
-#@within tag/function shuffle:_impl/lmt/construct/iota/0
 
 scoreboard players remove $ _shuffle 1
 execute store result storage : _[-1].index_as_bits."2^15" byte -2147483648 run scoreboard players operation $ _shuffle *= #2^16 _shuffle
