@@ -23,6 +23,7 @@
   #declare score_holder $prev_index
   #declare score_holder $swap_i
   #declare score_holder $swap_j
+  #declare score_holder $swap_with
   #declare score_holder $random
 
 #>
@@ -30,8 +31,8 @@
 
 #>
 #@within
-#  function shuffle:_impl/lmt/at/impl
-#  function shuffle:_impl/lmt/unsafe_at/impl
+#  function shuffle:_impl/lmt/at/**
+#  function shuffle:_impl/lmt/unsafe_at/**
 #declare score_holder $
 
 #>

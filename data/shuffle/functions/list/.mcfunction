@@ -8,6 +8,7 @@
 #>
 #@private
 scoreboard objectives add _shuffle dummy
+  scoreboard players set #2^16 _shuffle 65536
   data modify storage : _ append value {}
     function shuffle:_impl/lmt/construct/from_list/
     data modify storage : _[-1].take set from storage : _[-2].take
