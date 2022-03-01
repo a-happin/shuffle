@@ -9,6 +9,7 @@ shuffle
 
 - O(NlogN) shuffle algorithm using [List-Mapped Trie](https://gist.github.com/intsuc/0901df9d487f7829d97491613a12d351)
 - If `take` is specified, the program will abort when the specified number of elements are retrieved.
+- for 1.18.2
 
 ## Usage
 
