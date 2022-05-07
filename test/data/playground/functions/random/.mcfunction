@@ -5,9 +5,6 @@
 #  storage random: carry int
 #@output score $random _random (-32768 <= $random < 32768)
 
-# requires:
-#  score #2^16 _shuffle = 65536
-
 ## キャリー付き乗算乱数
 ## lag-1 MWC
 ## xₙ₊₁ = (mxₙ + cₙ) % b

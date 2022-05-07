@@ -12,18 +12,6 @@
 ## cₙ₊₁ = (mxₙ + cₙ) / b
 ## ※m,bは定数 m = 31743, b = 65536
 
-#>
-#@within * shuffle:**
-  #declare score_holder $random
-
-#>
-#@within function shuffle:_impl/random/**
-  #declare storage shuffle:
-
-#>
-#@private
-  #declare score_holder $
-
 execute store result score $random _shuffle run data get storage shuffle: random._ 31743
 execute store result score $ _shuffle run data get storage shuffle: random.carry
 execute store result storage shuffle: random._ short 1 store result storage shuffle: random.carry int 0.0000152587890625 run scoreboard players operation $random _shuffle += $ _shuffle
