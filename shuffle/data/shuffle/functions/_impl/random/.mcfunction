@@ -1,13 +1,9 @@
 #> shuffle:_impl/random/
 #@within * shuffle:**
 #@input
-#  storage shuffle: random[0]
-#  storage shuffle: random[3]
-#  score $random.carry _shuffle
-#@output score $random _shuffle
-
-# requires:
-#  score #2^16 _shuffle = 65536
+#  storage shuffle: random._ short
+#  storage shuffle: random.carry int
+#@output score $random _shuffle (-32768 <= $random < 32768)
 
 ## キャリー付き乗算乱数
 ## lag-1 MWC
@@ -15,7 +11,19 @@
 ## cₙ₊₁ = (mxₙ + cₙ) / b
 ## ※m,bは定数 m = 31743, b = 65536
 
-execute store result score $random _shuffle run data get storage shuffle: random[0] 31743
-execute store result score $random.carry _shuffle run scoreboard players operation $random _shuffle += $random.carry _shuffle
-execute store result storage shuffle: random[3] int 1 run scoreboard players operation $random.carry _shuffle /= #2^16 _shuffle
-execute store result storage shuffle: random[0] int 1 run scoreboard players operation $random _shuffle %= #2^16 _shuffle
+#>
+#@within * shuffle:**
+  #declare score_holder $random
+
+#>
+#@within function shuffle:_impl/random/**
+  #declare storage shuffle:
+
+#>
+#@private
+  #declare score_holder $
+
+execute store result score $random _shuffle run data get storage shuffle: random._ 31743
+execute store result score $ _shuffle run data get storage shuffle: random.carry
+execute store result storage shuffle: random._ short 1 store result storage shuffle: random.carry int 0.0000152587890625 run scoreboard players operation $random _shuffle += $ _shuffle
+execute store result score $random _shuffle run data get storage shuffle: random._
