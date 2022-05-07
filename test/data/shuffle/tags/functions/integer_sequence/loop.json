@@ -1,6 +1,0 @@
-{
-  "values": [
-    "shuffle:_impl/random/",
-    "shuffle:integer_sequence/loop"
-  ]
-}
