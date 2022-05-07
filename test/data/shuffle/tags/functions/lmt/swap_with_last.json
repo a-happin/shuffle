@@ -1,0 +1,8 @@
+{
+  "values": [
+    "shuffle:_impl/lmt/unsafe_at/size/impl",
+    "shuffle:lmt/swap_with_last/1",
+    "shuffle:_impl/lmt/unsafe_at/index/impl",
+    "shuffle:lmt/swap_with_last/2"
+  ]
+}
