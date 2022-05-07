@@ -162,6 +162,8 @@ data remove storage : _[-1]
 
 ## Requirement
 
+- Minecraft JE 1.18.2
+
 ## Installation
 
 ## License
