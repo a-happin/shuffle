@@ -1,6 +1,7 @@
 #> shuffle:_impl/random/
 #@within * shuffle:**
 #@input
+#  objective _shuffle
 #  storage shuffle: random._ short
 #  storage shuffle: random.carry int
 #@output score $random _shuffle (-32768 <= $random < 32768)
