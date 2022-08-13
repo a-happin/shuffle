@@ -17,8 +17,5 @@ scoreboard players remove $size _shuffle 1
 ## swap (lmt[index], lmt[size])
 execute unless score $index _shuffle = $size _shuffle run function #shuffle:integer_sequence/swap_with_last
 
-## --take
-scoreboard players remove $take _shuffle 1
-
-## do-while (take >= 1 && size >= 2)
-execute if score $take _shuffle matches 1.. if score $size _shuffle matches 2.. run function #shuffle:integer_sequence/loop
+## do-while (rest < size && size >= 2)
+execute if score $rest _shuffle < $size _shuffle if score $size _shuffle matches 2.. run function #shuffle:integer_sequence/loop

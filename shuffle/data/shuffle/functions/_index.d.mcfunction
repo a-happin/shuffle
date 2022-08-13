@@ -13,7 +13,7 @@
 #@within function shuffle:**
   #declare objective _shuffle
   #declare score_holder $size
-  #declare score_holder $take
+  #declare score_holder $rest
   #declare score_holder $index
   #declare score_holder $prev_index
   #declare score_holder $
