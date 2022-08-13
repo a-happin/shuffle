@@ -11,8 +11,8 @@ execute unless data storage : _[-1].lmt[-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][
 ## shuffled.append (lmt[index])
 data modify storage : _[-2].shuffled append from storage : _[-1].lmt[-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2][-2]._
 
-## last = --size
-execute store result score $last _shuffle run scoreboard players remove $size _shuffle 1
+## --size
+scoreboard players remove $size _shuffle 1
 
 ## swap (lmt[index], lmt[size])
 execute unless score $index _shuffle = $size _shuffle run function #shuffle:integer_sequence/swap_with_last
