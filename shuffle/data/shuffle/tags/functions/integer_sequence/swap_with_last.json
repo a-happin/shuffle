@@ -1,6 +1,6 @@
 {
   "values": [
-    "shuffle:_impl/lmt/unsafe_at/size/impl",
+    "shuffle:_impl/lmt/at/size/impl",
     "shuffle:integer_sequence/swap_with_last/1",
     "shuffle:_impl/lmt/unsafe_at/index/impl",
     "shuffle:integer_sequence/swap_with_last/2"
