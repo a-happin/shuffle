@@ -23,4 +23,3 @@
 #>
 #@within function shuffle:integer_sequence/**
   #declare score_holder $begin
-  #declare score_holder $end

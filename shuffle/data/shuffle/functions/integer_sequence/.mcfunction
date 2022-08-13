@@ -16,7 +16,7 @@ scoreboard objectives add _shuffle dummy
   scoreboard players set #2^17 _shuffle 131072
   data modify storage : _[-1].shuffled set value []
   execute store result score $begin _shuffle run data get storage : _[-1].begin
-  execute store result score $size _shuffle store result score $end _shuffle run data get storage : _[-1].end
+  execute store result score $size _shuffle run data get storage : _[-1].end
   execute store result score $take _shuffle run scoreboard players operation $size _shuffle -= $begin _shuffle
   execute if data storage : _[-1].take store result score $take _shuffle run data get storage : _[-1].take
   scoreboard players operation $take _shuffle < $size _shuffle
