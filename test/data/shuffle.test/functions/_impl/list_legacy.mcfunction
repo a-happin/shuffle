@@ -17,7 +17,6 @@ data modify storage : _ append value {}
   data modify storage : _[-1].list set from storage : _[-2].list
   execute if data storage : _[-2].take run data modify storage : _[-1].take set from storage : _[-2].take
   data modify storage : _[-1].expected set from storage : _[-2].expected
-  execute store result storage : _[-1].expected_size int 1 if data storage : _[-1].expected[]
 
   ## shuffle
   function shuffle:list/legacy/

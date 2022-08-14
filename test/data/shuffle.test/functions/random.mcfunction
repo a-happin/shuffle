@@ -1,5 +1,5 @@
 #> shuffle.test:random
-#@private
+#@user
 
 
 #>
