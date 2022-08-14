@@ -250,6 +250,32 @@ for (const category of ['list', 'list_legacy'] as const)
   })
 }
 
+for (const category of ['integer_sequence'] as const)
+{
+  datapack.define (new MCFunction (`shuffle.test:${category}/-100_100`), (THIS) => {
+    test_files.push (THIS)
+
+    const seed = [0, 3] as const
+    const input = [-100, 100] as const
+    const expected = shuffle[category] (seed, input, undefined)
+
+    THIS.IMP_DOC = [
+      `#@within function shuffle.test:`
+    ]
+
+    THIS.body = [
+    `data modify storage : _ append value {random: [I; ${seed[0]}, ${seed[1]}]}`,
+    `  data modify storage : _[-1].name set value "${THIS}"`,
+    `  data modify storage : _[-1].begin set value ${input[0]}`,
+    `  data modify storage : _[-1].end set value ${input[1]}`,
+    `  data modify storage : _[-1].expected set value [${expected}]`,
+    `  function shuffle.test:_impl/${category}`,
+    `data remove storage : _[-1]`,
+    ]
+  })
+}
+
+
 datapack.define (new MCFunction (`shuffle.test:`), (THIS) => {
   THIS.IMP_DOC = [
     `#@user`

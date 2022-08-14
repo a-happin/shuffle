@@ -339,3 +339,4 @@ schedule function shuffle.test:list/10000_take100000 335t replace
 schedule function shuffle.test:integer_sequence/10000_take100000 336t replace
 schedule function shuffle.test:list/the_quick_brown_fox_jumps_over_the_lazy_dog 337t replace
 schedule function shuffle.test:list_legacy/the_quick_brown_fox_jumps_over_the_lazy_dog 338t replace
+schedule function shuffle.test:integer_sequence/-100_100 339t replace
