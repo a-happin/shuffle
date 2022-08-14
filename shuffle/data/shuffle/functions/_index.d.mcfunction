@@ -18,7 +18,6 @@
   #declare score_holder $prev_index
   #declare score_holder $
   #declare score_holder $random
-  #declare score_holder #2^17
 
 #>
 #@within function shuffle:integer_sequence/**

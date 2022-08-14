@@ -13,7 +13,6 @@
 #>
 #@within function shuffle:integer_sequence/**
 scoreboard objectives add _shuffle dummy
-  scoreboard players set #2^17 _shuffle 131072
   data modify storage : _[-1].shuffled set value []
   execute store result score $begin _shuffle run data get storage : _[-1].begin
   execute store result score $size _shuffle run data get storage : _[-1].end
@@ -21,7 +20,7 @@ scoreboard objectives add _shuffle dummy
   ## rest = size - take
   execute if data storage : _[-1].take store result score $ _shuffle run data get storage : _[-1].take
   scoreboard players operation $rest _shuffle -= $ _shuffle
-  data modify storage : _ append value {lmt: []}
+  data modify storage : _ append value {lmt: [], a: [I; 0]}
     execute if score $rest _shuffle < $size _shuffle if score $size _shuffle matches 2.. run function #shuffle:integer_sequence/loop
     execute if score $rest _shuffle matches ..0 if score $size _shuffle matches 1 run function shuffle:integer_sequence/last
   data remove storage : _[-1]

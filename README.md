@@ -89,6 +89,7 @@ data remove storage : _[-1]
 
 ##### input and output
 
+- input `storage : _[-1].a` `[I; int]` temporary variable
 - input `storage : _[-1].lmt` List-Mapped Trie
 - input `score $size _shuffle` int (size of lmt)
 - input `storage : _[-1].take` Optional\<int\>
@@ -102,7 +103,7 @@ data remove storage : _[-1]
 
 ```mcfunction
 scoreboard objectives add _shuffle dummy
-  data modify storage : _ append value {}
+  data modify storage : _ append value {a: [I; 0]}
     data modify storage : _[-1].lmt set value [[[[[[[[[[[[[[[[{_:1},{_:2}],[{_:3},{_:4}]],[[{_:5},{_:6}],[{_:7},{_:8}]]],[[[{_:9},{_:10}],[]],[]]],[]],[]],[]],[]],[]],[]],[]],[]],[]],[]],[]],[]]
     scoreboard players set $size _shuffle 10
     function shuffle:lmt/
@@ -114,7 +115,7 @@ scoreboard objectives remove _shuffle
 
 ```mcfunction
 scoreboard objectives add _shuffle dummy
-  data modify storage : _ append value {}
+  data modify storage : _ append value {a: [I; 0]}
     data modify storage : _[-1].lmt set value [[[[[[[[[[[[[[[[{_:1},{_:2}],[{_:3},{_:4}]],[[{_:5},{_:6}],[{_:7},{_:8}]]],[[[{_:9},{_:10}],[]],[]]],[]],[]],[]],[]],[]],[]],[]],[]],[]],[]],[]],[]]
     scoreboard players set $size _shuffle 10
     data modify storage : _[-1].take set value 4
