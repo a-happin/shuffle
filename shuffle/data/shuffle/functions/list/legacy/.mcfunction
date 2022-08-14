@@ -15,6 +15,6 @@ scoreboard objectives add _shuffle dummy
   scoreboard players operation $rest _shuffle -= $ _shuffle
   data modify storage : _ append value {}
     execute if score $rest _shuffle < $size _shuffle if score $size _shuffle matches 2.. run function #shuffle:list/legacy/loop
-    execute if score $rest _shuffle matches ..0 if score $size _shuffle matches ..1 run function shuffle:list/legacy/last
+    execute if score $rest _shuffle matches ..0 if score $size _shuffle matches 1 run function shuffle:list/legacy/last
   data remove storage : _[-1]
 scoreboard objectives remove _shuffle

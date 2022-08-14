@@ -15,4 +15,4 @@ execute store result score $rest _shuffle run scoreboard players operation $ _sh
 execute if data storage : _[-1].take store result score $ _shuffle run data get storage : _[-1].take
 scoreboard players operation $rest _shuffle -= $ _shuffle
 execute if score $rest _shuffle < $size _shuffle if score $size _shuffle matches 2.. run function #shuffle:lmt/loop
-execute if score $rest _shuffle matches ..0 if score $size _shuffle matches ..1 run data modify storage : _[-1].shuffled append from storage : _[-1].lmt[0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0]._
+execute if score $rest _shuffle matches ..0 if score $size _shuffle matches 1 run data modify storage : _[-1].shuffled append from storage : _[-1].lmt[0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0]._
